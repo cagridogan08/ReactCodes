@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+import CategoryList from "./components/CategoryList";
+import Navi from "./components/Navi";
+import NewTest from "./components/NewTest";
+import ProductList from "./components/ProductList";
+import { Container, Row, Col } from "reactstrap";
 function App() {
+  var productInfo = "Product";
+  let categoryInfo = "Category";
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Container>
+        <Row xs="3">
+          <Navi />
+        </Row>
+        <Row>
+          
+
+          <Col xs="3">
+            <CategoryList title={categoryInfo}></CategoryList>
+          </Col>
+          <Col xs="9">
+            <ProductList title = {productInfo}></ProductList>
+          </Col>
+        </Row>
+        <Row>
+          <NewTest></NewTest>
+        </Row>
+      </Container>
     </div>
   );
 }
